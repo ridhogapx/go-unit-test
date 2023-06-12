@@ -1,24 +1,14 @@
 package helper
 
-import "testing"
+import (
+	"fmt"
+	"testing"
 
-func TestHello(t *testing.T) {
-	result := Hello("Ridho")
-	if result != "Hello dude" {
-		t.Fail()
-	}
-}
+	"github.com/stretchr/testify/assert"
+)
 
-func TestGalih(t *testing.T) {
-	result := Hello("Galih")
-	if result != "Hello Galih" {
-		t.Fail()
-	}
-}
-
-func TestBudi(t *testing.T) {
-	result := Hello("Budi")
-	if result != "Hello Budi" {
-		t.Fail()
-	}
+func TestAssertion(t *testing.T) {
+	result := Hello("RageNeko26")
+	assert.Equal(t, "Hello RageNeko26", result, "Result must be 'Hello RageNeko26' ")
+	fmt.Println("Testing...")
 }
