@@ -44,3 +44,30 @@ func TestExample(t *testing.T) {
 	result := Hello("Anon")
 	assert.Equal(t, "Hi Anon!", result, "Result is not as expected!")
 }
+
+// Tabel Test
+func TestWithTable(t *testing.T) {
+	tests := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "John",
+			request:  "John",
+			expected: "Hello John",
+		},
+		{
+			name:     "Doe",
+			request:  "Doe",
+			expected: "Hello Doe",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := Hello(test.request)
+			assert.Equal(t, test.expected, result, "Value is not equal!")
+		})
+	}
+}
